@@ -1,0 +1,6 @@
+﻿<span>Scroll down to item 1000 to view memory corruption</span>
+@for (int j = 0; j < 2000; j++)
+{
+    <div>This works as expected: @(j < 1500 ? j.ToString() : "N/A")</div>
+    <div>This becomes corrupted: @(j < 1500 ? j : "N/A")</div>
+}
